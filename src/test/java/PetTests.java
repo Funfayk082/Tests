@@ -13,12 +13,22 @@ import java.util.ArrayList;
 public class PetTests implements Steps {
     @Test(priority = 1)
     public void addNewPet() {
+        ArrayList<String> photoUrls = new ArrayList<>();
+        photoUrls.add("string");
+        ArrayList<TagRequest> tags = new ArrayList<>();
+        tags.add(new TagRequest(0L, "Cat"));
+        CategoryRequest category = new CategoryRequest(0L, "Cat");
         PET_API_STEPS.addNewPet(new PetRequest(0L, category, "Pawny", photoUrls, tags, "available" ));
     }
 
     @Test(priority = 2)
     public void updatePet() {
-        PET_API_STEPS.updatePet(new PetRequest(0L, category, "Лапик", photoUrls, tags, "В наличии" ));
+        ArrayList<String> photoUrls = new ArrayList<>();
+        photoUrls.add("string");
+        ArrayList<TagRequest> tags = new ArrayList<>();
+        tags.add(new TagRequest(0L, "Cat"));
+        CategoryRequest category = new CategoryRequest(0L, "Cat");
+        PET_API_STEPS.updatePet(new PetRequest(0L, category, "Pawny", photoUrls, tags, "available" ));
     }
 
     @Test(priority = 3)
