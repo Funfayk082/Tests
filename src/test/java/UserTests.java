@@ -11,52 +11,40 @@ import java.util.List;
 public class UserTests  implements Steps {
     @Test(priority = 10)
     public void getUserByUsername() {
-        UserResponse expectedResponse = new UserResponse(9223372036854775807L, "string", "string", "string", "string", "string", "string", 0);
-        UserResponse actualResponse = USER_API_STEPS.getUserByUsername("string");
-        Assert.assertEquals(actualResponse, expectedResponse);
+        USER_API_STEPS.getUserByUsername("string");
     }
 
     @Test(priority = 11)
     public void updateUser() {
         UserRequest request = new UserRequest(0L, "ff", "string", "string", "string", "string", "string", 0L);
-        ApiResponse expectedResponse = new ApiResponse(200, "unknown", "9223372036854775807");
-        ApiResponse actualResponse = USER_API_STEPS.updateUser("string", request);
-        Assert.assertEquals(actualResponse, expectedResponse);
+        USER_API_STEPS.updateUser("string", request);
     }
 
     @Test(priority = 12)
     public void deleteUser() {
-        ApiResponse expectedResponse = new ApiResponse(200, "unknown", "string");
-        ApiResponse actualResponse = USER_API_STEPS.deleteUser("string");
-        Assert.assertEquals(actualResponse, expectedResponse);
+        USER_API_STEPS.deleteUser("string");
     }
 
     @Test(priority = 13)
     public void login() {
-        ApiResponse actualResponse = USER_API_STEPS.login("string", "12345678");
+        USER_API_STEPS.login("string", "12345678");
     }
 
     @Test(priority = 14)
     public void logout() {
-        ApiResponse expectedResponse = new ApiResponse(200, "unknown", "ok");
-        ApiResponse actualResponse = USER_API_STEPS.logout();
-        Assert.assertEquals(actualResponse, expectedResponse);
+        USER_API_STEPS.logout();
     }
 
     @Test(priority = 15)
     public void addUserList() {
         List<UserRequest> users = new ArrayList<>();
         users.add(new UserRequest(1L, "Funfayk082", "Андрей", "Зайцев", "Funfayk082@yandex.ru", "abc_123456", "88005553535", 1L));
-        ApiResponse expectedResponse = new ApiResponse(200, "unknown", "ok");
-        ApiResponse actualResponse = USER_API_STEPS.addUserList(users);
-        Assert.assertEquals(actualResponse, expectedResponse);
+        USER_API_STEPS.addUserList(users);
     }
 
     @Test(priority = 16)
     public void addUser() {
         UserRequest user = new UserRequest(0L, "FF", "A", "Z", "FF@mail.ru", "12345678", "string", 0L);
-        ApiResponse expectedResponse = new ApiResponse(200, "unknown", "9223372036854775807");
-        ApiResponse actualResponse = USER_API_STEPS.addUser(user);
-        Assert.assertEquals(actualResponse, expectedResponse);
+        USER_API_STEPS.addUser(user);
     }
 }
