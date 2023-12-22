@@ -16,10 +16,10 @@ public class PetTests implements Steps {
         ArrayList<String> photoUrls = new ArrayList<>();
         photoUrls.add("string");
         ArrayList<TagRequest> tags = new ArrayList<>();
-        tags.add(new TagRequest(0L, "Кот"));
-        CategoryRequest category = new CategoryRequest(0L, "Кот");
-        PetResponse actualPet = PET_API_STEPS.addNewPet(new PetRequest(0L, category, "Лапик", photoUrls, tags, "В наличии" ));
-        PetResponse expectedPet = new PetResponse(9223372036854775807L, category, "Лапик", photoUrls, tags, "В наличии" );
+        tags.add(new TagRequest(0L, "Cat"));
+        CategoryRequest category = new CategoryRequest(0L, "Cat");
+        PetResponse actualPet = PET_API_STEPS.addNewPet(new PetRequest(0L, category, "Pawny", photoUrls, tags, "available" ));
+        PetResponse expectedPet = new PetResponse(9223372036854775807L, category, "Pawny", photoUrls, tags, "available" );
         Assert.assertEquals(actualPet, expectedPet);
     }
 
